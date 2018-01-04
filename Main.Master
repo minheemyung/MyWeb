@@ -1,0 +1,264 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Sample.Main" %>
+
+<%@ Import Namespace="System.Web.Optimization" %>
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <title>MinheeDEV Web</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Web page to include Bootstrap and Web API to Asp.Net forms application.">
+    <meta name="author" content="MMyung">
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+
+    <!-- CSS Includes -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- CSS Includes -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link href="css/agency.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="vendor/font-awesome/js/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /*
+ .navbar-nav li a:hover, .navbar-nav > .active > a {
+  color: #fff !important;
+
+  background-color:#f4511e !important;
+  background-image: none !important;
+}
+
+        .active
+        {
+            border-bottom: 1px solid black;
+            bottom: 0;
+            content: "";
+            left: 0;
+            position: absolute;
+            width: 100px;
+        }
+            */
+    </style>
+    <asp:ContentPlaceHolder ID="StyleSection" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body data-spy="scroll" data-target=".navbar-fixed-top">
+    <form id="form1" runat="server">
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" id="mainNav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="Default.aspx">MinheeDEV</a>
+                    <button class="navbar-toggle navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        Menu
+          <i class="fa fa-bars"></i>
+
+
+                    </button>
+
+                </div>
+                <div class="collapse navbar-collapse " id="navbarResponsive">
+                    <ul class="nav navbar-nav text-uppercase ">
+                        <li class="active "><a class="menuTab" id="home" href="Default.aspx">Home</a></li>
+
+                        <li><a class="menuTab" href="AboutMe.aspx">About Me</a></li>
+                        <li><a class="menuTab" href="Reference.aspx">Reference</a></li>
+                        <li><a class="menuTab" href="Email.aspx">Contact</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content Page Section -->
+        <div class="container transparent">
+            <asp:ContentPlaceHolder ID="ContentSection" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- /container -->
+        <%-- Script Section --%>
+        <%: Scripts.Render("~/bundles/jQuery")  %>
+        <asp:ContentPlaceHolder ID="ScriptSection" runat="server" />
+
+        <a id="back-to-top" href="#" class="back-to-top" style="display: inline;">
+
+            <i class="fa fa-arrow-circle-up"></i>
+
+        </a>
+
+    </form>
+
+    <script>
+        //$(function () {
+        //    $('[id*=submenu]').addClass('sub-menu open');
+        //    // $('[id*=Master_Pages]').attr("aria-expanded", true);
+
+        //    $('.subMenus').click(function () {
+        //        localStorage.setItem('lastTab', $(this).attr('id'));
+        //    });
+        //});
+
+        //function pageLoad() {
+        //    var isActiveLink = false;
+        //    $.each($('.subMenus'), function () {
+        //        if ($(this).attr('id') == localStorage.getItem('lastTab')) {
+        //            $(this).closest('li').addClass('active');
+        //            localStorage.removeItem('lastTab');
+        //            isActiveLink = true;
+        //        }
+        //        else {
+        //            $(this).closest('li').removeClass('active');
+        //        }
+        //    });
+        //    if (!isActiveLink) {
+        //        $('[id*=home]').closest('li').addClass('active');
+        //    }
+        //}
+
+        /*
+        $(function () {
+            // for bootstrap 3 use 'shown.bs.tab', for bootstrap 2 use 'shown' in the next line
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                // save the latest tab; use cookies if you like 'em better:
+                localStorage.setItem('lastTab', $(this).attr('href'));
+            });
+  
+            // go to the latest tab, if it exists:
+            var lastTab = localStorage.getItem('lastTab');
+            if (lastTab) {
+                $('[href="' + lastTab + '"]').tab('show');
+            }
+        });
+        */
+        /*
+        $(function () {
+            var tabName = $("[id*=TabName]").val() != "" ? $("[id*=TabName]").val() : "personal";
+            $('#Tabs a[href="#' + tabName + '"]').tab('show');
+            $("#Tabs a").click(function () {
+                $("[id*=TabName]").val($(this).attr("href").replace("#", ""));
+            });
+        });
+        */
+        /*
+        $(function () {
+            //Attach click event handler to your menu
+            $('.nav li').click(function () {
+                // Remove the active class from previously selected item
+                $(this).siblings().removeClass('active');
+                //Set the active class to currently selected item
+                $(this).addClass('active');
+            });
+        });
+        */
+        /*
+        $(".nav li a").on("click", function () {
+            $(".li").find(".active").removeClass("active");
+            $(this).parent().addClass("active");
+        });
+        */
+        //$(document).ready(function () {
+        //    // Add smooth scrolling to all links in navbar + footer link
+        //    $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+        //        // Make sure this.hash has a value before overriding default behavior
+        //        if (this.hash !== "") {
+
+        //            // Prevent default anchor click behavior
+        //            event.preventDefault();
+
+        //            // Store hash
+        //            var hash = this.hash;
+
+        //            // Using jQuery's animate() method to add smooth page scroll
+        //            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+        //            $('html, body').animate({
+        //                scrollTop: $(hash).offset().top
+        //            }, 900, function () {
+
+        //                // Add hash (#) to URL when done scrolling (default click behavior)
+        //                window.location.hash = hash;
+        //            });
+        //        } // End if
+        //    });
+
+
+
+        //})
+
+        $(document).ready(function () {
+
+            var numberOfImages = 7;
+
+            var imageNum = Math.ceil(Math.random() * numberOfImages);
+
+            var imgPath = ('image/' + imageNum + '.jpg');
+
+            $('body').css('background-image', ('url("' + imgPath + '")'));
+
+
+        });
+
+        //$(document).ready(function () {
+        //    // get current URL path and assign 'active' class
+        //    var pathname = window.location.pathname;
+        //    $('.nav > li > a[href="' + pathname + '"]').parent().addClass('active');
+
+
+        //});
+
+        $('.back-to-top').css({ "display": "none" });
+
+        jQuery(document).ready(function () {
+
+            var offset = 250;
+
+            var duration = 300;
+
+            jQuery(window).scroll(function () {
+
+                if (jQuery(this).scrollTop() > offset) {
+
+                    jQuery('.back-to-top').fadeIn(duration);
+
+                } else {
+
+                    jQuery('.back-to-top').fadeOut(duration);
+
+                }
+
+            });
+
+
+
+            jQuery('.back-to-top').click(function (event) {
+
+                event.preventDefault();
+
+                jQuery('html, body').animate({ scrollTop: 0 }, duration);
+
+                return false;
+
+            })
+
+        });
+
+        // When the DOM is ready, run this function
+        $(document).ready(function () {
+            //Set the carousel options
+            $('#quote-carousel').carousel({
+                pause: true,
+                interval: 20000,
+            });
+        });
+
+
+    </script>
+
+
+
+</body>
+</html>
